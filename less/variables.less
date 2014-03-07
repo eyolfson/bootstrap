@@ -39,10 +39,42 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-path: "https://eyl.io/static/fonts/";
+@dejavu-sans-font-name: "dejavu-sans";
+@dejavu-sans-font-svg-id: "DejaVuSans";
+@dejavu-serif-font-name: "dejavu-serif";
+@dejavu-serif-font-svg-id: "DejaVuSerif";
+@dejavu-sans-mono-font-name: "dejavu-sans-mono";
+@dejavu-sans-mono-font-svg-id: "DejaVuSansMono";
+@font-face {
+  font-family: 'DejaVu Sans';
+  src: ~"url('@{font-path}@{dejavu-sans-font-name}.eot')";
+  src: ~"url('@{font-path}@{dejavu-sans-font-name}.eot?#iefix') format('embedded-opentype')",
+       ~"url('@{font-path}@{dejavu-sans-font-name}.woff') format('woff')",
+       ~"url('@{font-path}@{dejavu-sans-font-name}.ttf') format('truetype')",
+       ~"url('@{font-path}@{dejavu-sans-font-name}.svg#@{dejavu-sans-font-svg-id}') format('svg')";
+}
+@font-face {
+  font-family: 'DejaVu Serif';
+  src: ~"url('@{font-path}@{dejavu-serif-font-name}.eot')";
+  src: ~"url('@{font-path}@{dejavu-serif-font-name}.eot?#iefix') format('embedded-opentype')",
+       ~"url('@{font-path}@{dejavu-serif-font-name}.woff') format('woff')",
+       ~"url('@{font-path}@{dejavu-serif-font-name}.ttf') format('truetype')",
+       ~"url('@{font-path}@{dejavu-serif-font-name}.svg#@{dejavu-serif-font-svg-id}') format('svg')";
+}
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  src: ~"url('@{font-path}@{dejavu-sans-mono-font-name}.eot')";
+  src: ~"url('@{font-path}@{dejavu-sans-mono-font-name}.eot?#iefix') format('embedded-opentype')",
+       ~"url('@{font-path}@{dejavu-sans-mono-font-name}.woff') format('woff')",
+       ~"url('@{font-path}@{dejavu-sans-mono-font-name}.ttf') format('truetype')",
+       ~"url('@{font-path}@{dejavu-sans-mono-font-name}.svg#@{dejavu-sans-mono-font-svg-id}') format('svg')";
+}
+
+@font-family-sans-serif:  "DejaVu Sans", sans-serif;
+@font-family-serif:       "DejaVu Serif", serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-monospace:   "DejaVu Sans Mono", monospace;
 @font-family-base:        @font-family-sans-serif;
 
 @font-size-base:          14px;
@@ -72,7 +104,7 @@
 //
 //## Specify custom locations of the include Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
-@icon-font-path:          "../fonts/";
+@icon-font-path:          @font-path;
 @icon-font-name:          "glyphicons-halflings-regular";
 @icon-font-svg-id:        "glyphicons_halflingsregular";
 
